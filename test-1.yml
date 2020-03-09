@@ -1,10 +1,17 @@
 server:
   port: 10002
 spring:
+  profiles:
+    active: test
+---
+
+spring:
+  profiles: dev
   application:
-    name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/lrydl/spring-cloud-config.git
+    name: dev-server
+---
+spring:
+  profiles: test
+  application:
+    name: test-server
+
